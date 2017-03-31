@@ -7,6 +7,7 @@ keyWindow = {"ctrl", "alt"}
 positions = {
     maximized = hs.layout.maximized,
     centered = {x=0.15, y=0.15, w=0.7, h=0.7},
+    large = {x=0.01, y=0.02, w=0.98, h=0.96},
 
     left34 = {x=0, y=0, w=0.34, h=1},
     left50 = hs.layout.left50,
@@ -28,7 +29,7 @@ positions = {
     lower50 = {x=0, y=0.5, w=1, h=0.5},
     lower50Left50 = {x=0, y=0.5, w=0.5, h=0.5},
     lower50Right50 = {x=0.5, y=0.5, w=0.5, h=0.5},
-    chat = {x=0.5, y=0.5, w=0.5, h=0.5}
+    chat = {x=0.4, y=0.75, w=0.6, h=0.25}
 }
 
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
@@ -38,3 +39,4 @@ require "layout"
 require "grid"
 require "app"
 require "window"
+dofile("anycomplete.lua")

@@ -13,7 +13,11 @@ grid = {
 
     {key="m", units={positions.lower50Left50}},
     {key=",", units={positions.lower50}},
-    {key=".", units={positions.chat}}
+    {key=".", units={positions.chat}},
+    
+    -- max
+    {key="\\", units={positions.maximized}},
+
 }
 
 hs.fnutils.each(grid, function(entry)

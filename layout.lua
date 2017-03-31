@@ -8,23 +8,32 @@ local laptopScreenLayout = {
 
 local asusLCD = "ASUS VS247"
 local dellLCD = "DELL U2414H"
+local chromeApp = hs.application.applicationsForBundleID('com.google.Chrome')[0]
+
+asusLCDLayout = {
+    {"Firefox",   nil, asusLCD, positions.right50, nil, nil},
+    {chromeApp, nil, asusLCD, positions.large, nil, nil},
+    {"TextWrangler", nil, asusLCD, positions.left50, nil, nil},
+}
 
 dellLCDLayout = {
-    {"Safari",   nil, dellLCD, positions.upper66, nil, nil},
+    {"Firefox", nil, dellLCD, positions.lower50, nil, nil},
     {"Slack", nil, dellLCD, positions.lower50, nil, nil},
-    {"Terminal", nil, dellLCD, positions.lower50, nil, nil},
+    {"iTerm2", nil, dellLCD, positions.large, nil, nil},
+    {"VLC", nil, dellLCD, positions.chat, nil, nil},
 }
+hs.layout.apply(dellLCDLayout)
+--hs.layout.apply(asusLCDLayout)
 
 layouts = {
     {
-        name="Coding",
+        name="Work",
         description="For fun and profit",
         small={
-            {"TextWrangler", nil, screen, positions.left50, nil, nil},
-            {"Slack", nil, screen, positions.right50, nil, nil},
+            {"Slack", nil, screen, positions.maximized, nil, nil},
         },
         large={
-            {"Slack", nil, screen, positions.left50, nil, nil},
+            {"Slack", nil, screen, positions.maximized, nil, nil},
             {"TextWrangler", nil, screen, positions.right50, nil, nil},
         }
     },
@@ -35,19 +44,7 @@ layouts = {
             {"Chrome", nil, screen, positions.left50, nil, nil},
             {"iTerm",   nil, screen, positions.right50, nil, nil},
         }
-    },
-    {
-        name="Work",
-        description="Pedal to the metal",
-        small={
-            {"Chrome", nil, screen, positions.left50, nil, nil},
-            {"Slack",   nil, screen, positions.right50, nil, nil},
-        },
-        large={
-            {"Chrome", nil, screen, positions.left50, nil, nil},
-            {"Slack",   nil, screen, positions.chat, nil, nil},
-        }
-    },
+    }
 }
 currentLayout = null
 
@@ -73,7 +70,6 @@ layoutChooser:subTextColor({red=0, green=0, blue=0, alpha=0.4})
 bindKey(';', function()
     layoutChooser:show()
 end)
-hs.layout.apply(dellLCDLayout)
 
 hs.screen.watcher.new(function()
     hs.alert.show("Screen changed")

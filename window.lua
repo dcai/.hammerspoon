@@ -12,6 +12,15 @@ hs.hotkey.bind(keyWindow, "m", function()
     win:setFrame(f)
 end)
 
+
+hs.hotkey.bind(keyWindow, "left", function()
+	hs.window.focusedWindow():moveOneScreenWest();
+end)
+
+hs.hotkey.bind(keyWindow, "right", function()
+	hs.window.focusedWindow():moveOneScreenEast();
+end)
+
 -- Window movement
 pixels = 20
 
