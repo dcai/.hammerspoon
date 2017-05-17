@@ -22,6 +22,8 @@ positions = {
     right50 = hs.layout.right50,
     right66 = {x=0.34, y=0, w=0.66, h=1},
 
+    upper30 = {x=0, y=0, w=1, h=0.3},
+    upper40 = {x=0, y=0, w=1, h=0.4},
     upper50 = {x=0, y=0, w=1, h=0.5},
     upper66 = {x=0, y=0, w=1, h=0.66},
     upper50Left50 = {x=0, y=0, w=0.5, h=0.5},
@@ -29,17 +31,26 @@ positions = {
     upper50Right30 = {x=0.7, y=0, w=0.3, h=0.5},
     upper50Right50 = {x=0.5, y=0, w=0.5, h=0.5},
 
+    lower30 = {x=0, y=0.7, w=1, h=0.3},
+    lower40 = {x=0, y=0.6, w=1, h=0.4},
     lower50 = {x=0, y=0.5, w=1, h=0.5},
+    lower60 = {x=0, y=0.4, w=1, h=0.6},
+    lower70 = {x=0, y=0.3, w=1, h=0.7},
+
     lower50Left50 = {x=0, y=0.5, w=0.5, h=0.5},
     lower50Right50 = {x=0.5, y=0.5, w=0.5, h=0.5},
     chat = {x=0.4, y=0.75, w=0.6, h=0.25}
 }
 
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Hammerspoon Config loaded")
+hs.alert.show("Hammerspoon reloaded @ " .. hostName)
 
 require "layout"
 require "grid"
 require "app"
 require "window"
-dofile("anycomplete.lua")
+require "caffeine"
+require "anycomplete"
+
+bindKey('r', reloadConfig)
+bindKey('t', showDateAndTime)
