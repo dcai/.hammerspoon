@@ -3,6 +3,9 @@ require "lib"
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}
 keyWindow = {"ctrl", "alt"}
+keyGlobal = {"cmd", "ctrl", "alt"}
+
+hostName = hs.host.localizedName()
 
 positions = {
     maximized = hs.layout.maximized,

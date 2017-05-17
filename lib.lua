@@ -1,6 +1,6 @@
 --
 function bindKey(key, fn)
-    hs.hotkey.bind({"cmd", "ctrl", "alt"}, key, fn)
+    hs.hotkey.bind(keyGlobal, key, fn)
 end
 
 
