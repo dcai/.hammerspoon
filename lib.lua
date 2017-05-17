@@ -3,6 +3,11 @@ function bindKey(key, fn)
     hs.hotkey.bind(keyGlobal, key, fn)
 end
 
+function bindAppKey(modifier, app)
+    hs.hotkey.bind(keyApp, modifier, function()
+        hs.application.launchOrFocus("/Applications/" .. app)
+    end)
+end
 
 function applicationRunning(name)
   apps = hs.application.runningApplications()
