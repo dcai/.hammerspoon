@@ -31,3 +31,6 @@ function reloadConfig(files)
     end
 end
 
+function showDateAndTime()
+    hs.alert(os.date("%R on %e %B %G"), 2)
+end
