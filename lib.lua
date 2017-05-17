@@ -18,20 +18,6 @@ function applicationRunning(name)
 end
 
 
-function applyLayout(layout)
-    local screen = hs.screen.mainScreen()
-
-    local layoutSize = layout.large
-    if layout.large and screen:currentMode().w > 1500 then
-        layoutSize = layout.large
-    end
-
-    currentLayout = layout
-    hs.layout.apply(layoutSize, function(windowTitle, layoutWindowTitle)
-        return string.sub(windowTitle, 1, string.len(layoutWindowTitle)) == layoutWindowTitle
-    end)
-end
-
 -- config reload
 function reloadConfig(files)
     doReload = false
