@@ -5,6 +5,7 @@ keyGrid = {"cmd", "ctrl"}
 keyWindow = {"ctrl", "alt"}
 keyGlobal = {"cmd", "ctrl", "alt"}
 
+workLaptopName = 'dsmbp15'
 hostName = hs.host.localizedName()
 
 positions = {
