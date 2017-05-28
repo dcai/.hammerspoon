@@ -25,17 +25,24 @@ end
 
 -- config reload
 function reloadConfig(files)
-    doReload = false
-    for _,file in pairs(files) do
-        if file:sub(-4) == ".lua" then
-            doReload = true
-        end
-    end
-    if doReload then
-        hs.reload()
-    end
+    -- doReload = false
+    -- for _,file in pairs(files) do
+    --     if file:sub(-4) == ".lua" then
+    --         doReload = true
+    --     end
+    -- end
+    -- if doReload then
+    --     hs.reload()
+    -- end
+    hs.reload()
 end
 
 function showDateAndTime()
-    hs.alert(os.date("%R on %e %B %G"), 2)
+    -- local screen = hs.screen.mainScreen()
+    local style = {};
+    local seconds = 3;
+    style['textColor'] = { white = 1, alpha = 0.7 }
+    style['textFont'] = 'Monaco'
+    style['textSize'] = 56
+    hs.alert.show(os.date("%R on %e %B %G"), style, seconds)
 end
