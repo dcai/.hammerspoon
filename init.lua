@@ -52,5 +52,15 @@ require "window"
 require "caffeine"
 require "anycomplete"
 
-bindKey('r', reloadConfig)
-bindKey('t', showDateAndTime)
+bindGlobalKey('r', reloadConfig)
+bindGlobalKey('t', showDateAndTime)
+
+-- lock screen
+bindGlobalKey('escape', function()
+    if hostName == workLaptopName then
+        hs.caffeinate.lockScreen()
+    else
+        hs.caffeinate.startScreensaver()
+    end
+end)
+

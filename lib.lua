@@ -1,5 +1,5 @@
 --
-function bindKey(key, fn)
+function bindGlobalKey(key, fn)
     hs.hotkey.bind(keyGlobal, key, fn)
 end
 

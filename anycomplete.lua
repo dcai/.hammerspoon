@@ -1,6 +1,6 @@
 
 -- Anycomplete
-bindKey("G", function()
+bindGlobalKey("G", function()
     local GOOGLE_ENDPOINT = 'https://suggestqueries.google.com/complete/search?client=firefox&q=%s'
     local current = hs.application.frontmostApplication()
 

@@ -80,7 +80,7 @@ function chooseLayout()
     layoutChooser:width(60)
     layoutChooser:subTextColor({red=0, green=0, blue=0, alpha=0.4})
 
-    bindKey(';', function()
+    bindGlobalKey(';', function()
         layoutChooser:show()
     end)
 end
