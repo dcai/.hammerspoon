@@ -30,19 +30,13 @@ presetLayouts = {
         description="Lrn",
         definition={
             {appChrome,  nil, screenMain, positions.maximized, nil, nil},
-            {"Firefox",  nil, screenDellU2414H, positions.lower50, nil, nil},
+            {"Opera",  nil, screenDellU2414H, positions.lower50, nil, nil},
             {"Safari",   nil, screenDellU2414H, positions.lower60, nil, nil},
+            {"WeChat",   nil, screenDellU2414H, positions.chat, nil, nil},
             {"Slack",    nil, screenDellU2414H, positions.lower30, nil, nil},
             {appiTerm,   nil, screenDellU2414H, positions.large, nil, nil},
             {appSublime, nil, screenDellU2414H, positions.lower40, nil, nil},
             {"VLC",      nil, screenDellU2414H, positions.chat, nil, nil},
-        }
-    },
-    {
-        name="Standup",
-        description="Just Firefox",
-        definition={
-            {"Firefox", nil, screenMain, positions.maximized, nil, nil},
         }
     },
 }

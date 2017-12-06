@@ -40,3 +40,12 @@ hs.fnutils.each(grid, function(entry)
         window:moveToUnit(units[index + 1])
     end)
 end)
+
+-- hs.hotkey.bind(keyGrid, 'left', function()
+--     hs.alert.show("sdfsdfsfs")
+--     hs.window:moveOneScreenWest()
+-- end)
+
+-- hs.hotkey.bind(keyGrid, 'right', function()
+--     hs.window:moveOneScreenEast()
+-- end)

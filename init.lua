@@ -5,7 +5,7 @@ keyGrid = {"cmd", "ctrl"}
 keyWindow = {"ctrl", "alt"}
 keyGlobal = {"cmd", "ctrl", "alt"}
 
-workLaptopName = 'dsmbp15'
+workLaptopName = 'dongsheng-cai'
 hostName = hs.host.localizedName()
 
 positions = {
@@ -40,7 +40,7 @@ positions = {
 
     lower50Left50 = {x=0, y=0.5, w=0.5, h=0.5},
     lower50Right50 = {x=0.5, y=0.5, w=0.5, h=0.5},
-    chat = {x=0.4, y=0.75, w=0.6, h=0.25}
+    chat = {x=0.2, y=0.6, w=0.6, h=0.3}
 }
 
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
@@ -57,11 +57,10 @@ bindGlobalKey('r', reloadConfig)
 bindGlobalKey('t', showDateAndTime)
 
 -- lock screen
-bindGlobalKey('escape', function()
-    if hostName == workLaptopName then
-        hs.caffeinate.lockScreen()
-    else
-        hs.caffeinate.startScreensaver()
-    end
-end)
-
+-- bindGlobalKey('escape', function()
+--     if hostName == workLaptopName then
+--         hs.caffeinate.lockScreen()
+--     else
+--         hs.caffeinate.startScreensaver()
+--     end
+-- end)
