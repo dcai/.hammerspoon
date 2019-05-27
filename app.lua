@@ -23,7 +23,7 @@ else
 end
 bindAppKey("2", "Sublime Text.app")
 bindAppKey("3", "iTerm.app")
-bindAppKey("4", "NeteaseMusic.app")
+bindAppKey("4", "Postman.app")
 bindAppKey("6", "VLC.app")
 bindAppKey("0", "Emacs.app")
 bindAppKey("s", "Slack.app")
