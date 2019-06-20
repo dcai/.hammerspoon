@@ -1,5 +1,6 @@
 -- full screen
-hs.hotkey.bind(keyWindow, "m", function()
+
+function maxWindow()
     local win = hs.window.focusedWindow()
     local f = win:frame()
     local screen = win:screen()
@@ -10,7 +11,9 @@ hs.hotkey.bind(keyWindow, "m", function()
     f.w = max.w
     f.h = max.h
     win:setFrame(f)
-end)
+end
+hs.hotkey.bind(keyWindow, "m", maxWindow)
+hs.hotkey.bind(keyWindow, "\\", maxWindow)
 
 
 hs.hotkey.bind(keyWindow, "left", function()
