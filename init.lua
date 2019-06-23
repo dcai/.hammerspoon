@@ -52,6 +52,7 @@ require "app"
 require "window"
 require "caffeine"
 require "anycomplete"
+require "battery"
 
 bindGlobalKey('r', reloadConfig)
 bindGlobalKey('t', showDateAndTime)
