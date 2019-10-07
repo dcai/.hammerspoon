@@ -12,15 +12,15 @@ function batteryWatcher()
         batteryMenu:setIcon(nil)
     end
     local menuTable = {
-        { title = string.format('powerSource: %s', powerSource)},
+        { title = powerSource },
         { title = '-'},
-        { title = string.format('isCharging: %s', isCharging)},
-        { title = string.format('isCharged: %s', isCharged)},
-        { title = string.format('Cycleds: %s', cycles)},
+        { title = string.format('Charging: %s', isCharging and "Yes" or "No")},
+        { title = string.format('Charged: %s', isCharged and "Yes" or "No")},
+        { title = string.format('Cycles: %s', cycles)},
     }
     batteryMenu:setMenu(menuTable)
 end
 
-batteryMenu = hs.menubar.newWithPriority(2147483645)
+batteryMenu = hs.menubar.new()
 batteryWatcher()
 hs.battery.watcher.new(batteryWatcher):start()

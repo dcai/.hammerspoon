@@ -17,9 +17,9 @@ hs.hotkey.bind({"cmd"}, "e", function()
 end)
 bindAppKey("`", "iTerm.app")
 if hostName == workLaptopName then
-	bindAppKey("1", "Firefox.app")
+	bindAppKey("1", "Google Chrome.app")
 else
-	bindAppKey("1", "Firefox.app")
+	bindAppKey("1", "Google Chrome.app")
 end
 bindAppKey("2", "Sublime Text.app")
 bindAppKey("3", "iTerm.app")
