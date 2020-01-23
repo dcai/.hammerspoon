@@ -2,6 +2,7 @@ require "lib"
 
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}
+-- keyWindow = {"ctrl", "alt"}
 keyWindow = {"ctrl", "alt"}
 keyGlobal = {"cmd", "ctrl", "alt"}
 
@@ -56,12 +57,3 @@ require "battery"
 
 bindGlobalKey('r', reloadConfig)
 bindGlobalKey('t', showDateAndTime)
-
--- lock screen
--- bindGlobalKey('escape', function()
---     if hostName == workLaptopName then
---         hs.caffeinate.lockScreen()
---     else
---         hs.caffeinate.startScreensaver()
---     end
--- end)

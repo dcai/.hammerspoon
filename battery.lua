@@ -14,6 +14,7 @@ function batteryWatcher()
     local menuTable = {
         { title = powerSource },
         { title = '-'},
+        { title = string.format("%d%%", percentage)},
         { title = string.format('Charging: %s', isCharging and "Yes" or "No")},
         { title = string.format('Charged: %s', isCharged and "Yes" or "No")},
         { title = string.format('Cycles: %s', cycles)},

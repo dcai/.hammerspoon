@@ -16,23 +16,16 @@ hs.hotkey.bind({"cmd"}, "e", function()
   hs.application.launchOrFocus("Finder")
 end)
 bindAppKey("`", "iTerm.app")
-if hostName == workLaptopName then
-	bindAppKey("1", "Google Chrome.app")
-else
-	bindAppKey("1", "Google Chrome.app")
-end
+bindAppKey("1", "Google Chrome.app")
 bindAppKey("2", "Sublime Text.app")
 bindAppKey("3", "iTerm.app")
-bindAppKey("4", "Postman.app")
+bindAppKey("p", "Postman.app")
 bindAppKey("6", "VLC.app")
 bindAppKey("0", "Emacs.app")
 bindAppKey("s", "Slack.app")
 bindAppKey("o", "Emacs.app")
 bindAppKey("m", "QQMusic.app")
 bindAppKey("v", "MacVim.app")
-if hostName == workLaptopName then
-	bindAppKey("-", "Opera.app")
-else
-	bindAppKey("-", "Firefox.app")
-end
+bindAppKey("t", "Microsoft Teams.app")
+bindAppKey("-", "Firefox.app")
 bindAppKey("\\", "Dictionary.app")
