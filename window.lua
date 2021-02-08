@@ -12,9 +12,6 @@ function maxWindow()
     f.h = max.h
     win:setFrame(f)
 end
-hs.hotkey.bind(keyWindow, "m", maxWindow)
-hs.hotkey.bind(keyWindow, "\\", maxWindow)
-
 
 hs.hotkey.bind(keyWindow, "left", function()
 	hs.window.focusedWindow():moveOneScreenWest();

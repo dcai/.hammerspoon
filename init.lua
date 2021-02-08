@@ -47,12 +47,12 @@ positions = {
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.alert.show("Hammerspoon reloaded @ " .. hostName)
 
-require "layout"
-require "grid"
 require "app"
-require "window"
 require "caffeine"
 require "anycomplete"
+require "layout"
+require "grid"
+-- require "window"
 -- require "battery"
 
 bindGlobalKey('r', reloadConfig)

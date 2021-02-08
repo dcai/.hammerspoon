@@ -6,22 +6,19 @@ grid = {
     {key="u", units={positions.upper50Left50}},
     {key="i", units={positions.upper50}},
     {key="o", units={positions.upper50Right50}},
-
     {key="j", units={positions.left50, positions.left66, positions.left34}},
     {key="k", units={positions.centered, positions.maximized}},
     {key="l", units={positions.right50, positions.right66, positions.right34}},
-
     {key="m", units={positions.lower50Left50}},
     {key=",", units={positions.lower50}},
     {key=".", units={positions.chat}},
-    
-    -- max
-    {key="\\", units={positions.maximized}},
-
+    {key="return", units={positions.maximized}},
 }
 
 hs.fnutils.each(grid, function(entry)
+
     hs.hotkey.bind(keyGrid, entry.key, function()
+
         local units = entry.units
         local screen = hs.screen.mainScreen()
         local window = hs.window.focusedWindow()
@@ -40,12 +37,3 @@ hs.fnutils.each(grid, function(entry)
         window:moveToUnit(units[index + 1])
     end)
 end)
-
--- hs.hotkey.bind(keyGrid, 'left', function()
---     hs.alert.show("sdfsdfsfs")
---     hs.window:moveOneScreenWest()
--- end)
-
--- hs.hotkey.bind(keyGrid, 'right', function()
---     hs.window:moveOneScreenEast()
--- end)
