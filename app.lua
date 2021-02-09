@@ -25,3 +25,12 @@ bindAppKey("s", "Slack.app")
 bindAppKey("m", "QQMusic.app")
 bindAppKey("f", "Firefox.app")
 bindAppKey("\\", "Dictionary.app")
+
+-- -- move mouse to current app area
+-- local hyperShift = {'ctrl', 'alt', 'cmd', 'shift'}
+-- hs.hotkey.bind(hyperShift, '`', function()
+--     local screen = hs.mouse.getCurrentScreen()
+--     local nextScreen = screen:next()
+--     local rect = nextScreen:fullFrame()
+--     local center = hs.geometry.rectMidPoint(rect)hs.mouse.setAbsolutePosition(center)
+-- end)
