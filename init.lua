@@ -9,7 +9,7 @@ hostName = hs.host.localizedName()
 
 positions = {
     maximized = hs.layout.maximized,
-    centered = {x = 0.15, y = 0.15, w = 0.7, h = 0.7},
+    centered = {x = 0.05, y = 0.1, w = 0.9, h = 0.8},
     large = {x = 0.01, y = 0.02, w = 0.98, h = 0.96},
     
     left34 = {x = 0, y = 0, w = 0.34, h = 1},
@@ -49,8 +49,8 @@ hs.alert.show("Hammerspoon reloaded @ " .. hostName)
 require "app"
 require "caffeine"
 require "anycomplete"
-require "layout"
 require "grid"
+require "layout"
 -- require "window"
 -- require "battery"
 
