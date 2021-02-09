@@ -43,8 +43,9 @@ positions = {
     --
 }
 
-hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-hs.alert.show("Hammerspoon reloaded @ " .. hostName)
+local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
+hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
+hs.alert.show("hammerspoon reload on " .. hostName, style, seconds)
 
 require "app"
 require "caffeine"

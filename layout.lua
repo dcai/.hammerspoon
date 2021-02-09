@@ -84,7 +84,9 @@ function chooseLayout()
 end
 
 function applyDefaultLayout()
-    for k, v in pairs(hs.screen.allScreens()) do print(k, v) end
+    for k, v in pairs(hs.screen.allScreens()) do
+        print(k, v)
+    end
     if hostName == "jumpy-panda" then
         print("Apply default layout for " .. hostName)
         local layout = presetLayouts[2].definition

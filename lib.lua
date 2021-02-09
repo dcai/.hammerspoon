@@ -24,6 +24,8 @@ end
 
 -- config reload
 function reloadConfig(files)
+    print("config reload triggered on " .. hostName)
+
     -- doReload = false
     -- for _,file in pairs(files) do
     --     if file:sub(-4) == ".lua" then
