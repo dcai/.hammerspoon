@@ -10,18 +10,17 @@ function bindAppKey(modifier, app)
 end
 
 function applicationRunning(name)
-  apps = hs.application.runningApplications()
-  found = false
-  for i = 1, #apps do
-    app = apps[i]
-    if app:title() == name and (#app:allWindows() > 0 or app:mainWindow()) then
-      found = true
+    apps = hs.application.runningApplications()
+    found = false
+    for i = 1, #apps do
+        app = apps[i]
+        if app:title() == name and (#app:allWindows() > 0 or app:mainWindow()) then
+            found = true
+        end
     end
-  end
-
-  return found
+    
+    return found
 end
-
 
 -- config reload
 function reloadConfig(files)
@@ -41,7 +40,7 @@ function showDateAndTime()
     -- local screen = hs.screen.mainScreen()
     local style = {};
     local seconds = 3;
-    style['textColor'] = { white = 1, alpha = 0.7 }
+    style['textColor'] = {white = 1, alpha = 0.7}
     style['textFont'] = 'Monaco'
     style['textSize'] = 56
     hs.alert.show(os.date("%R on %e %B %G"), style, seconds)

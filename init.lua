@@ -2,11 +2,9 @@ require "lib"
 
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}
--- keyWindow = {"ctrl", "alt"}
 keyWindow = {"ctrl", "alt"}
 keyGlobal = {"cmd", "ctrl", "alt"}
 
-workLaptopName = 'dongsheng-cai'
 hostName = hs.host.localizedName()
 
 positions = {
@@ -41,7 +39,9 @@ positions = {
     
     lower50Left50 = {x = 0, y = 0.5, w = 0.5, h = 0.5},
     lower50Right50 = {x = 0.5, y = 0.5, w = 0.5, h = 0.5},
-chat = {x = 0.2, y = 0.6, w = 0.6, h = 0.3}}
+    chat = {x = 0.2, y = 0.6, w = 0.6, h = 0.3}
+    --
+}
 
 hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.alert.show("Hammerspoon reloaded @ " .. hostName)

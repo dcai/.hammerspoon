@@ -12,12 +12,12 @@ function batteryWatcher()
         batteryMenu:setIcon(nil)
     end
     local menuTable = {
-        { title = powerSource },
-        { title = '-'},
-        { title = string.format("%d%%", percentage)},
-        { title = string.format('Charging: %s', isCharging and "Yes" or "No")},
-        { title = string.format('Charged: %s', isCharged and "Yes" or "No")},
-        { title = string.format('Cycles: %s', cycles)},
+        {title = powerSource},
+        {title = '-'},
+        {title = string.format("%d%%", percentage)},
+        {title = string.format('Charging: %s', isCharging and "Yes" or "No")},
+        {title = string.format('Charged: %s', isCharged and "Yes" or "No")},
+        {title = string.format('Cycles: %s', cycles)},
     }
     batteryMenu:setMenu(menuTable)
 end

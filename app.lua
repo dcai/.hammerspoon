@@ -1,11 +1,11 @@
 
 -- App vars
-local chrome    = hs.appfinder.appFromName("Google Chrome")
-local iterm     = hs.appfinder.appFromName("iTerm2")
-local subl      = hs.appfinder.appFromName("Sublime Text")
-local finder    = hs.appfinder.appFromName("Finder")
-local mail      = hs.appfinder.appFromName("Mail")
-local macvim    = hs.appfinder.appFromName("/Applications/MacVim.app")
+local chrome = hs.appfinder.appFromName("Google Chrome")
+local iterm = hs.appfinder.appFromName("iTerm2")
+local subl = hs.appfinder.appFromName("Sublime Text")
+local finder = hs.appfinder.appFromName("Finder")
+local mail = hs.appfinder.appFromName("Mail")
+local macvim = hs.appfinder.appFromName("/Applications/MacVim.app")
 
 --
 -- Application launcher
@@ -13,7 +13,7 @@ local macvim    = hs.appfinder.appFromName("/Applications/MacVim.app")
 
 -- finder
 hs.hotkey.bind({"cmd"}, "e", function()
-  hs.application.launchOrFocus("Finder")
+    hs.application.launchOrFocus("Finder")
 end)
 -- bindAppKey("`", "iTerm.app")
 bindAppKey("1", "Google Chrome.app")
@@ -31,3 +31,5 @@ bindAppKey("w", "Cisco Webex Meetings.app")
 bindAppKey("t", "Microsoft Teams.app")
 bindAppKey("-", "Firefox.app")
 bindAppKey("\\", "Dictionary.app")
+
+   
