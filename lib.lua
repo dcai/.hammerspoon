@@ -4,9 +4,13 @@ function bindGlobalKey(key, fn)
 end
 
 function bindAppKey(modifier, app)
-    hs.hotkey.bind(keyApp, modifier, function()
-        hs.application.launchOrFocus("/Applications/" .. app)
-    end)
+    hs.hotkey.bind(
+        keyApp,
+        modifier,
+        function()
+            hs.application.launchOrFocus("/Applications/" .. app)
+        end
+    )
 end
 
 function applicationRunning(name)
@@ -18,7 +22,7 @@ function applicationRunning(name)
             found = true
         end
     end
-    
+
     return found
 end
 
@@ -40,10 +44,10 @@ end
 
 function showDateAndTime()
     -- local screen = hs.screen.mainScreen()
-    local style = {};
-    local seconds = 3;
-    style['textColor'] = {white = 1, alpha = 0.7}
-    style['textFont'] = 'Monaco'
-    style['textSize'] = 56
+    local style = {}
+    local seconds = 3
+    style["textColor"] = {white = 1, alpha = 0.7}
+    style["textFont"] = "Monaco"
+    style["textSize"] = 56
     hs.alert.show(os.date("%R on %e %B %G"), style, seconds)
 end

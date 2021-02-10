@@ -1,4 +1,3 @@
-
 -- App vars
 local chrome = hs.appfinder.appFromName("Google Chrome")
 local iterm = hs.appfinder.appFromName("iTerm2")
@@ -12,9 +11,13 @@ local macvim = hs.appfinder.appFromName("/Applications/MacVim.app")
 --
 
 -- finder
-hs.hotkey.bind({"cmd"}, "e", function()
-    hs.application.launchOrFocus("Finder")
-end)
+hs.hotkey.bind(
+    {"cmd"},
+    "e",
+    function()
+        hs.application.launchOrFocus("Finder")
+    end
+)
 bindAppKey("1", "Google Chrome.app")
 -- bindAppKey("1", "Safari.app")
 bindAppKey("2", "Sublime Text.app")

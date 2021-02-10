@@ -9,7 +9,8 @@
 local useAscii = false
 local iconSetIndex = 2
 
-local iconOn = [[ASCII:
+local iconOn =
+    [[ASCII:
 .....1a..........AC..........E
 ..............................
 ......4.......................
@@ -25,7 +26,8 @@ e.2......6.3..........t..q....
 .....5c.......................
 ]]
 
-local iconOff = [[ASCII:
+local iconOff =
+    [[ASCII:
 .....1a.....x....AC.y.......zE
 ..............................
 ......4.......................
@@ -55,13 +57,13 @@ local function setIcon(state)
         if useAscii then
             icon = iconOn
         else
-            icon = string.format('assets/caffeine/active-%d.png', iconSetIndex)
+            icon = string.format("assets/caffeine/active-%d.png", iconSetIndex)
         end
     else
         if useAscii then
             icon = iconOff
         else
-            icon = string.format('assets/caffeine/inactive-%d.png', iconSetIndex)
+            icon = string.format("assets/caffeine/inactive-%d.png", iconSetIndex)
         end
     end
     caffeine:setIcon(icon)
@@ -70,9 +72,9 @@ end
 local function updateCaffeineDisplay(state, alert)
     local result
     if state then
-        caffeineAlert('enabled', alert)
+        caffeineAlert("enabled", alert)
     else
-        caffeineAlert('disabled', alert)
+        caffeineAlert("disabled", alert)
     end
     setIcon(state)
 end
