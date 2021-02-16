@@ -3,30 +3,39 @@
 --
 local screenAsusVs247 = "ASUS VS239"
 local screenMain = hs.screen.mainScreen()
+local screenSecondary = {
+    ["jumpy-panda"] = "Colour LCD",
+    ["default"] = "Colour LCD"
+}
 
-local appChrome = "Google Chrome"
-local appSublime = "Sublime Text"
-local appiTerm = "iTerm2"
-local appFutubull = "富途牛牛"
+local appBrowser = "Firefox"
+local appEditor = "Sublime Text"
+local appTerminal = "iTerm2"
+local appTrade = "富途牛牛"
+
+layouts = {}
+layouts["default"] = {
+    name = "Default",
+    description = "Default layout",
+    definition = {
+        {appTerminal, nil, screenMain, positions.maximized, nil, nil}
+    }
+}
+
+layouts["jumpy-panda"] = {
+    name = "jumpy-panda",
+    description = "macbook air m1",
+    definition = {
+        {appEditor, nil, screenMain, positions.centered, nil, nil},
+        {appTerminal, nil, screenMain, positions.right66, nil, nil},
+        {appTrade, nil, screenMain, positions.lower50, nil, nil},
+        {appBrowser, nil, screenMain, positions.centered80, nil, nil}
+    }
+}
 
 presetLayouts = {
-    {
-        name = "Code",
-        description = "For fun and profit",
-        definition = {
-            {appiTerm, nil, screenMain, positions.maximized, nil, nil}
-        }
-    },
-    {
-        name = "Write",
-        description = "Time to write",
-        definition = {
-            -- {appFutubull, nil, screenAsusVs247, positions.maximized, nil, nil},
-            {appSublime, nil, screenAsusVs247, positions.centered, nil, nil},
-            {"Firefox", nil, screenAsusVs247, positions.centered80, nil, nil},
-            {appiTerm, nil, screenMain, positions.right66, nil, nil}
-        }
-    }
+    layouts["default"],
+    layouts["jumpy-panda"]
 }
 function applyLayout(screen, layout)
     local l = layout.definition
@@ -87,11 +96,12 @@ function applyDefaultLayout()
     for k, v in pairs(hs.screen.allScreens()) do
         print(k, v)
     end
-    if hostName == "jumpy-panda" then
-        print("Apply default layout for " .. hostName)
-        local layout = presetLayouts[2].definition
-        hs.layout.apply(layout)
+    print("Apply default layout for " .. hostName)
+    local layout = layouts["default"].definition
+    if layouts[hostName] then
+        layout = layouts[hostName].definition
     end
+    hs.layout.apply(layout)
 end
 
 chooseLayout()
