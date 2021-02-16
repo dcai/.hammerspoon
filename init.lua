@@ -9,7 +9,8 @@ hostName = hs.host.localizedName()
 
 positions = {
     maximized = hs.layout.maximized,
-    centered = {x = 0.05, y = 0.1, w = 0.9, h = 0.8},
+    centered80 = {x = 0.05, y = 0.1, w = 0.9, h = 0.8},
+    centered = {x = 0.05, y = 0.25, w = 0.9, h = 0.5},
     large = {x = 0.01, y = 0.02, w = 0.98, h = 0.96},
     left34 = {x = 0, y = 0, w = 0.34, h = 1},
     left50 = hs.layout.left50,
@@ -40,7 +41,7 @@ positions = {
 
 local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
 hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
-hs.alert.show("hammerspoon reload on " .. hostName, style, seconds)
+hs.alert.show("hammerspoon config reloaded on " .. hostName, style, seconds)
 
 require "app"
 require "caffeine"

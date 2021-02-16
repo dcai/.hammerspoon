@@ -21,7 +21,7 @@ grid = {
     {key = "h", units = leftGrids},
     {key = "right", units = rightGrids},
     -- center and max
-    {key = "return", units = {positions.centered, positions.maximized}},
+    {key = "return", units = {positions.maximized, positions.centered}},
     -- {key="return", units={positions.maximized}},
 
     -- others

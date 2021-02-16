@@ -23,7 +23,7 @@ presetLayouts = {
         definition = {
             -- {appFutubull, nil, screenAsusVs247, positions.maximized, nil, nil},
             {appSublime, nil, screenAsusVs247, positions.centered, nil, nil},
-            {appChrome, nil, screenMain, positions.left66, nil, nil},
+            {"Firefox", nil, screenAsusVs247, positions.centered80, nil, nil},
             {appiTerm, nil, screenMain, positions.right66, nil, nil}
         }
     }

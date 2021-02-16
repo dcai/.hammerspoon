@@ -18,8 +18,9 @@ hs.hotkey.bind(
         hs.application.launchOrFocus("Finder")
     end
 )
-bindAppKey("1", "Google Chrome.app")
+-- bindAppKey("1", "Google Chrome.app")
 -- bindAppKey("1", "Safari.app")
+bindAppKey("1", "Firefox.app")
 bindAppKey("2", "Sublime Text.app")
 bindAppKey("3", "iTerm.app")
 bindAppKey("p", "Postman.app")
