@@ -40,7 +40,8 @@ positions = {
 }
 
 local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
-hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
+-- must assign to local variable
+local configWatcher = hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
 hs.alert.show("hammerspoon config reloaded on " .. hostName, style, seconds)
 
 require "app"
