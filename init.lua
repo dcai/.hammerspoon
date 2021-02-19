@@ -1,4 +1,10 @@
 require "lib"
+-- local screen = hs.screen.mainScreen()
+alertStyle = {}
+alertSeconds = 3
+alertStyle["textColor"] = {white = 1, alpha = 0.7}
+alertStyle["textFont"] = "Menlo"
+alertStyle["textSize"] = 52
 
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}
@@ -42,7 +48,7 @@ positions = {
 local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
 -- must assign to local variable
 local configWatcher = hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
-hs.alert.show("hammerspoon config reloaded on " .. hostName, style, seconds)
+hs.alert.show("hammerspoon init on " .. hostName, alertStyle, alertSeconds)
 
 require "app"
 require "caffeine"

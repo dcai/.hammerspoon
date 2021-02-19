@@ -28,26 +28,19 @@ end
 
 -- config reload
 function reloadConfig(files)
-    print("config reload triggered on " .. hostName)
-
-    -- doReload = false
-    -- for _,file in pairs(files) do
-    --     if file:sub(-4) == ".lua" then
-    --         doReload = true
-    --     end
-    -- end
-    -- if doReload then
-    --     hs.reload()
-    -- end
-    hs.reload()
+    local prefix = "###################################"
+    doReload = false
+    for _, file in pairs(files) do
+        if file:sub(-4) == ".lua" then
+            print(prefix .. file .. " triggers reload.")
+            doReload = true
+        end
+    end
+    if doReload then
+        hs.reload()
+    end
 end
 
 function showDateAndTime()
-    -- local screen = hs.screen.mainScreen()
-    local style = {}
-    local seconds = 3
-    style["textColor"] = {white = 1, alpha = 0.7}
-    style["textFont"] = "Monaco"
-    style["textSize"] = 56
-    hs.alert.show(os.date("%R on %e %B %G"), style, seconds)
+    hs.alert.show(os.date("%R on %e %B %G"), alertStyle, alertSeconds)
 end
