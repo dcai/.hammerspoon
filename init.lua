@@ -8,7 +8,9 @@ hs.alert.defaultStyle.textFont = "Menlo"
 hs.alert.defaultStyle.textSize = 52
 hs.window.animationDuration = 0
 
-log = hs.logger.new("dcai", "debug")
+logName = "###########"
+log = hs.logger.new(logName, "debug")
+log.i("Begin hammerspoon init " .. logName)
 
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}

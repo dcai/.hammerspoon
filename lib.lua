@@ -26,17 +26,30 @@ function applicationRunning(name)
     return found
 end
 
+function isempty(s)
+    return s == nil or s == ""
+end
+
+if isempty(foo) then
+    foo = "default value"
+end
+
 -- config reload
 function reloadConfig(files)
-    local prefix = "###################################"
     doReload = false
-    for _, file in pairs(files) do
-        if file:sub(-4) == ".lua" then
-            print(prefix .. file .. " triggers reload.")
-            doReload = true
+    if isempty(files) then
+        -- triggered by hotkey
+        doReload = true
+    else
+        for _, file in pairs(files) do
+            if file:sub(-4) == ".lua" then
+                log.i(file .. " triggers reload.")
+                doReload = true
+            end
         end
     end
     if doReload then
+        log.i("reloading config")
         hs.reload()
     end
 end

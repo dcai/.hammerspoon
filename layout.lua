@@ -28,7 +28,7 @@ layouts["jumpy-panda"] = {
     definition = {
         {appEditor, nil, screenMain, positions.centered, nil, nil},
         {appTerminal, nil, screenMain, positions.right66, nil, nil},
-        {appTrade, nil, screenMain, positions.lower50, nil, nil},
+        -- {appTrade, nil, screenMain, positions.lower50, nil, nil},
         {appBrowser, nil, screenMain, positions.centered80, nil, nil}
     }
 }
@@ -94,9 +94,9 @@ end
 
 function applyDefaultLayout()
     for k, v in pairs(hs.screen.allScreens()) do
-        print(k, v)
+        log.i("screen info => ", k, " => ", v)
     end
-    print("Apply default layout for " .. hostName)
+    log.i("Apply default layout for " .. hostName)
     local layout = layouts["default"].definition
     if layouts[hostName] then
         layout = layouts[hostName].definition
