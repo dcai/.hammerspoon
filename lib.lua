@@ -42,5 +42,5 @@ function reloadConfig(files)
 end
 
 function showDateAndTime()
-    hs.alert.show(os.date("%R on %e %B %G"), alertStyle, alertSeconds)
+    hs.alert.show(os.date("%R on %e %B %G"))
 end

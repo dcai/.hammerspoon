@@ -1,10 +1,14 @@
 require "lib"
 -- local screen = hs.screen.mainScreen()
-alertStyle = {}
-alertSeconds = 3
-alertStyle["textColor"] = {white = 1, alpha = 0.7}
-alertStyle["textFont"] = "Menlo"
-alertStyle["textSize"] = 52
+
+hs.alert.defaultStyle.fillColor = {white = 0.05, alpha = 0.75}
+hs.alert.defaultStyle.radius = 10
+hs.alert.defaultStyle.textColor = {white = 1, alpha = 0.7}
+hs.alert.defaultStyle.textFont = "Menlo"
+hs.alert.defaultStyle.textSize = 52
+hs.window.animationDuration = 0
+
+log = hs.logger.new("dcai", "debug")
 
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}
@@ -48,7 +52,6 @@ positions = {
 local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
 -- must assign to local variable
 configWatcher = hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
-hs.alert.show("hammerspoon init on " .. hostName, alertStyle, alertSeconds)
 
 require "app"
 require "caffeine"
@@ -60,3 +63,5 @@ require "layout"
 
 bindGlobalKey("r", reloadConfig)
 bindGlobalKey("t", showDateAndTime)
+
+hs.alert.show("hammerspoon loaded on " .. hostName)
