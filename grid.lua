@@ -2,8 +2,8 @@
 -- Grid
 --
 
-local leftGrids = {positions.left50, positions.left66, positions.left34}
-local rightGrids = {positions.right50, positions.right66, positions.right34}
+local leftGrids = {positions.left30, positions.left50, positions.left70}
+local rightGrids = {positions.right30, positions.right50, positions.right70}
 local topGrids = {positions.upper50}
 local bottomGrids = {positions.lower50}
 
@@ -21,7 +21,7 @@ grid = {
     {key = "h", units = leftGrids},
     {key = "right", units = rightGrids},
     -- center and max
-    {key = "return", units = {positions.maximized, positions.centered}},
+    {key = "return", units = {positions.maximized, positions.centered80, positions.centered}},
     -- {key="return", units={positions.maximized}},
 
     -- others
