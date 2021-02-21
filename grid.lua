@@ -10,16 +10,12 @@ local bottomGrids = {positions.lower50}
 grid = {
     -- up
     {key = "k", units = topGrids},
-    {key = "up", units = topGrids},
     -- down
-    {key = "down", units = bottomGrids},
     {key = "j", units = bottomGrids},
     -- left
-    {key = "left", units = leftGrids},
     {key = "l", units = rightGrids},
     -- right
     {key = "h", units = leftGrids},
-    {key = "right", units = rightGrids},
     -- center and max
     {key = "return", units = {positions.maximized, positions.centered80, positions.centered}},
     -- {key="return", units={positions.maximized}},

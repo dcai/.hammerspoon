@@ -14,7 +14,7 @@ log.i("Begin hammerspoon init " .. logName)
 
 keyApp = {"shift", "ctrl"}
 keyGrid = {"cmd", "ctrl"}
-keyWindow = {"ctrl", "alt"}
+keyWindow = {"cmd", "ctrl"}
 keyGlobal = {"cmd", "ctrl", "alt"}
 
 hostName = hs.host.localizedName()
@@ -61,10 +61,12 @@ require "caffeine"
 require "anycomplete"
 require "grid"
 require "layout"
--- require "window"
+require "window"
 -- require "battery"
 
 bindGlobalKey("r", reloadConfig)
 bindGlobalKey("t", showDateAndTime)
 
-hs.alert.show("hammerspoon loaded on " .. hostName)
+local msgReload = "hammerspoon loaded on " .. hostName
+-- hs.alert.show(msgReload)
+hs.notify.new({title = "Hammerspoon", informativeText = msgReload}):send()
