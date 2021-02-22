@@ -93,8 +93,8 @@ function chooseLayout()
 end
 
 function applyDefaultLayout()
-    for k, v in pairs(hs.screen.allScreens()) do
-        log.i("screen info => ", k, " => ", v)
+    for _, screen in pairs(hs.screen.allScreens()) do
+        log.i("screen info => ", _, " => ", screen, screen:name())
     end
     log.i("Apply default layout for " .. hostName)
     local layout = layouts["default"].definition
