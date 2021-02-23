@@ -2,15 +2,17 @@
 -- Layouts
 --
 local screenAsusVs247 = "ASUS VS239"
+local screenX1 = "X1"
 local screenMain = hs.screen.mainScreen()
+local screenLcd = "Color LCD"
 local screenSecondary = {
     ["jumpy-panda"] = "Colour LCD",
     ["default"] = "Colour LCD"
 }
 
-local appBrowser = "Firefox"
+local appBrowser = hs.appfinder.appFromName("Firefox")
 local appEditor = "Sublime Text"
-local appTerminal = "iTerm2"
+local appTerminal = hs.appfinder.appFromName("iTerm2")
 local appTrade = "富途牛牛"
 
 layouts = {}
@@ -29,6 +31,16 @@ layouts["jumpy-panda"] = {
         {appEditor, nil, screenMain, positions.centered, nil, nil},
         {appTerminal, nil, screenMain, positions.right66, nil, nil},
         -- {appTrade, nil, screenMain, positions.lower50, nil, nil},
+        {appBrowser, nil, screenMain, positions.centered80, nil, nil}
+    }
+}
+
+layouts["giant-cat"] = {
+    name = "giant-cat",
+    description = "macbook pro 16 woolworths",
+    definition = {
+        {appEditor, nil, screenLcd, positions.left30, nil, nil},
+        {appTerminal, nil, screenMain, positions.centered80, nil, nil},
         {appBrowser, nil, screenMain, positions.centered80, nil, nil}
     }
 }
