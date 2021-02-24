@@ -2,12 +2,13 @@
 -- Layouts
 --
 local screenAsusVs247 = "ASUS VS239"
+local screenWork = "VE248"
 local screenX1 = "X1"
 local screenMain = hs.screen.mainScreen()
 local screenLcd = "Color LCD"
 local screenSecondary = {
-    ["jumpy-panda"] = "Colour LCD",
-    ["default"] = "Colour LCD"
+    ["jumpy-panda"] = screenLcd,
+    ["default"] = screenLcd
 }
 
 local appBrowser = hs.appfinder.appFromName("Firefox")
