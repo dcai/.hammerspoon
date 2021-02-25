@@ -64,15 +64,33 @@ require "window"
 -- require "caffeine"
 -- require "battery"
 
+function showAllVolumes()
+    local vols = hs.fs.volume.allVolumes()
+    local msg = "volumes: \n"
+    for key, vol in pairs(vols) do
+        msg = msg .. key .. "\n"
+    end
+    return hs.alert(
+        msg,
+        {
+            ["textSize"] = 12
+        },
+        hs.screen.mainScreen(),
+        12
+    )
+end
+
 bindGlobalKey("r", reloadConfig)
 bindGlobalKey("t", showDateAndTime)
 bindGlobalKey(
     "u",
     function()
         -- local result, object, descriptor = hs.osascript.applescript('display dialog "Hello World"')
+        local uuid = showAllVolumes()
         local as = 'tell application "Finder" to eject (every disk whose ejectable is true)'
         local result, object, descriptor = hs.osascript.applescript(as)
         if result then
+            hs.alert.closeSpecific(uuid)
             log.i(object, descriptor)
             hs.alert.show("volumes umounted")
         else
