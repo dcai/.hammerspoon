@@ -18,8 +18,6 @@ grid = {
     {key = "h", units = leftGrids},
     -- center and max
     {key = "return", units = {positions.maximized, positions.centered80, positions.centered}},
-    -- {key="return", units={positions.maximized}},
-
     -- others
     {key = "o", units = {positions.upper50Right50}},
     {key = "m", units = {positions.lower50Left50}},

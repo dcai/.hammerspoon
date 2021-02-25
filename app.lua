@@ -11,23 +11,37 @@ function bindAppKey(modifier, app)
         keyApp,
         modifier,
         function()
-            local prevScreen = hs.window.focusedWindow():screen()
+            local defaultScreenName = "un-named screen"
+            local prevScreenName = defaultScreenName
+            local prevFocusedWin = hs.window.focusedWindow()
+            local prevScreen = prevFocusedWin:screen()
+            if prevFocusedWin and prevScreen then
+                prevScreenName = prevScreen:name() or defaultScreenName
+            end
 
-            local appPath = "/Applications/" .. app
-            local launched = hs.application.launchOrFocus(appPath)
-            log.i("Launch or focus " .. appPath, launched)
-
-            local focusedWin = hs.window.focusedWindow()
-            if not focusedWin then
+            local launched = hs.application.launchOrFocus(app)
+            log.i(string.format("%s %s", app, launched and "found" or "not found"))
+            if not launched then
                 return
             end
-            local nextScreen = focusedWin:screen()
-            if prevScreen:name() ~= nextScreen:name() then
-                log.i("move cursor to next screen", prevScreen:name() .. " => " .. nextScreen:name())
-                local frame = focusedWin:frame()
+
+            local nextFocusedWin = hs.window.focusedWindow()
+            if not nextFocusedWin then
+                return
+            end
+            local nextScreen = nextFocusedWin:screen()
+            local nextScreenName = defaultScreenName
+            if nextScreen then
+                nextScreenName = nextScreen:name() or defaultScreenName
+            end
+            if prevScreenName ~= nextScreenName then
+                log.i(string.format("Moving cursor to next screen: %s => %s", prevScreenName, nextScreenName))
+                local frame = nextFocusedWin:frame()
                 local rect = frame:rect()
                 local center = hs.geometry.rectMidPoint(rect)
                 hs.mouse.setAbsolutePosition(center)
+            else
+                log.i("Switched to an app on the same screen, cursor stays")
             end
         end
     )
@@ -47,15 +61,16 @@ hs.hotkey.bind(
 )
 
 local key2app = {
-    ["1"] = "Firefox.app",
-    ["2"] = "Sublime Text.app",
-    ["3"] = "iTerm.app",
-    p = "Postman.app",
-    d = "Discord.app",
-    s = "Slack.app",
-    m = "QQMusic.app",
-    w = "WeChat.app",
-    f = "Firefox.app"
+    ["1"] = "Firefox",
+    ["2"] = "Sublime Text",
+    ["3"] = "iTerm",
+    ["."] = "Dictionary",
+    ["\\"] = "Dictionary",
+    p = "Postman",
+    d = "Discord",
+    s = "Slack",
+    w = "WeChat",
+    f = "Firefox"
 }
 
 for key, app in pairs(key2app) do
