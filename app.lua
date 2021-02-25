@@ -54,6 +54,7 @@ local key2app = {
     d = "Discord.app",
     s = "Slack.app",
     m = "QQMusic.app",
+    w = "WeChat.app",
     f = "Firefox.app"
 }
 
