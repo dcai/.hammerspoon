@@ -42,7 +42,7 @@ layouts["giant-cat"] = {
     name = "giant-cat",
     description = "macbook pro 16 woolworths",
     definition = {
-        {appEditor, nil, screenLcd, positions.left30, nil, nil},
+        {appEditor, nil, screenLcd, positions.left70, nil, nil},
         {appTerminal, nil, screenMain, positions.centered80, nil, nil},
         {appBrowser, nil, screenMain, positions.centered80, nil, nil},
         {appSlack, nil, screenMain, positions.chat, nil, nil},
