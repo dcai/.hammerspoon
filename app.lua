@@ -6,6 +6,30 @@ local finder = hs.appfinder.appFromName("Finder")
 local mail = hs.appfinder.appFromName("Mail")
 local macvim = hs.appfinder.appFromName("/Applications/MacVim.app")
 
+function bindAppKey(modifier, app)
+    hs.hotkey.bind(
+        keyApp,
+        modifier,
+        function()
+            local prevScreen = hs.window.focusedWindow():screen()
+
+            hs.application.launchOrFocus("/Applications/" .. app)
+            local focusedWin = hs.window.focusedWindow()
+            if not focusedWin then
+                return
+            end
+            local nextScreen = focusedWin:screen()
+            if prevScreen:name() == nextScreen:name() then
+            else
+                local frame = focusedWin:frame()
+                local rect = frame:rect()
+                local center = hs.geometry.rectMidPoint(rect)
+                hs.mouse.setAbsolutePosition(center)
+            end
+        end
+    )
+end
+
 --
 -- Application launcher
 --

@@ -15,6 +15,8 @@ local appBrowser = hs.appfinder.appFromName("Firefox")
 local appEditor = "Sublime Text"
 local appTerminal = hs.appfinder.appFromName("iTerm2")
 local appTrade = "富途牛牛"
+local appSlack = "Slack"
+local appDiscord = "Discord"
 
 layouts = {}
 layouts["default"] = {
@@ -42,7 +44,9 @@ layouts["giant-cat"] = {
     definition = {
         {appEditor, nil, screenLcd, positions.left30, nil, nil},
         {appTerminal, nil, screenMain, positions.centered80, nil, nil},
-        {appBrowser, nil, screenMain, positions.centered80, nil, nil}
+        {appBrowser, nil, screenMain, positions.centered80, nil, nil},
+        {appSlack, nil, screenMain, positions.chat, nil, nil},
+        {appDiscord, nil, screenMain, positions.chat, nil, nil}
     }
 }
 

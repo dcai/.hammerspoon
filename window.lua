@@ -8,9 +8,6 @@ hs.hotkey.bind(
         if not win then
             return
         end
-        if not win then
-            return
-        end
         win:moveToScreen(win:screen():previous())
     end
 )
@@ -20,9 +17,6 @@ hs.hotkey.bind(
     "right",
     function()
         local win = hs.window.focusedWindow()
-        if not win then
-            return
-        end
         if not win then
             return
         end
