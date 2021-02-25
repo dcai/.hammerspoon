@@ -13,14 +13,17 @@ function bindAppKey(modifier, app)
         function()
             local prevScreen = hs.window.focusedWindow():screen()
 
-            hs.application.launchOrFocus("/Applications/" .. app)
+            local appPath = "/Applications/" .. app
+            local launched = hs.application.launchOrFocus(appPath)
+            log.i("Launch or focus " .. appPath, launched)
+
             local focusedWin = hs.window.focusedWindow()
             if not focusedWin then
                 return
             end
             local nextScreen = focusedWin:screen()
-            if prevScreen:name() == nextScreen:name() then
-            else
+            if prevScreen:name() ~= nextScreen:name() then
+                log.i("move cursor to next screen", prevScreen:name() .. " => " .. nextScreen:name())
                 local frame = focusedWin:frame()
                 local rect = frame:rect()
                 local center = hs.geometry.rectMidPoint(rect)
@@ -42,18 +45,22 @@ hs.hotkey.bind(
         hs.application.launchOrFocus("Finder")
     end
 )
--- bindAppKey("1", "Google Chrome.app")
--- bindAppKey("1", "Safari.app")
-bindAppKey("1", "Firefox.app")
-bindAppKey("2", "Sublime Text.app")
-bindAppKey("3", "iTerm.app")
-bindAppKey("p", "Postman.app")
-bindAppKey("d", "Discord.app")
-bindAppKey("6", "VLC.app")
-bindAppKey("s", "Slack.app")
-bindAppKey("m", "QQMusic.app")
-bindAppKey("f", "Firefox.app")
-bindAppKey("\\", "Dictionary.app")
+
+local key2app = {
+    ["1"] = "Firefox.app",
+    ["2"] = "Sublime Text.app",
+    ["3"] = "iTerm.app",
+    p = "Postman.app",
+    d = "Discord.app",
+    s = "Slack.app",
+    m = "QQMusic.app",
+    f = "Firefox.app",
+    w = "Dictionary.app"
+}
+
+for key, app in pairs(key2app) do
+    bindAppKey(key, app)
+end
 
 -- -- move mouse to current app area
 -- local hyperShift = {'ctrl', 'alt', 'cmd', 'shift'}
