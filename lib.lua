@@ -44,6 +44,16 @@ function reloadConfig(files)
     end
 end
 
+function ping()
+    hs.http.asyncGet(
+        "https://httpbin.org/get",
+        {},
+        function(status, body, headers)
+            log.i(body)
+        end
+    )
+end
+
 function showDateAndTime()
     hs.alert.show(os.date("%R on %e %B %G"))
 end

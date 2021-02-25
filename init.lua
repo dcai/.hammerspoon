@@ -68,5 +68,5 @@ bindGlobalKey("r", reloadConfig)
 bindGlobalKey("t", showDateAndTime)
 
 local msgReload = "hammerspoon loaded on " .. hostName
--- hs.alert.show(msgReload)
-hs.notify.show("Hammerspoon", hostName, msgReload)
+hs.alert.show(msgReload)
+-- hs.notify.show("Hammerspoon", hostName, msgReload)
