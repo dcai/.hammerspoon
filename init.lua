@@ -49,7 +49,7 @@ positions = {
     lower70 = {x = 0, y = 0.3, w = 1, h = 0.7},
     lower50Left50 = {x = 0, y = 0.5, w = 0.5, h = 0.5},
     lower50Right50 = {x = 0.5, y = 0.5, w = 0.5, h = 0.5},
-    chat = {x = 0.2, y = 0.6, w = 0.6, h = 0.3}
+    chat = {x = 0.2, y = 0.2, w = 0.6, h = 0.8}
 }
 
 local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
