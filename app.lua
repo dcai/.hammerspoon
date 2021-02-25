@@ -54,8 +54,7 @@ local key2app = {
     d = "Discord.app",
     s = "Slack.app",
     m = "QQMusic.app",
-    f = "Firefox.app",
-    w = "Dictionary.app"
+    f = "Firefox.app"
 }
 
 for key, app in pairs(key2app) do
