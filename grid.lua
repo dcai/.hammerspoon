@@ -23,8 +23,9 @@ grid = {
     -- others
     {key = "o", units = {positions.upper50Right50}},
     {key = "m", units = {positions.lower50Left50}},
-    {key = ".", units = {positions.chat}},
-    {key = "u", units = {positions.upper50Left50}}
+    {key = ",", units = {positions.chat}},
+    {key = "u", units = {positions.upper50Left50}},
+    {key = ".", units = {positions.lower50Right50}}
 }
 
 hs.fnutils.each(
