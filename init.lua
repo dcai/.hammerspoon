@@ -66,6 +66,20 @@ require "window"
 
 bindGlobalKey("r", reloadConfig)
 bindGlobalKey("t", showDateAndTime)
+bindGlobalKey(
+    "u",
+    function()
+        -- local result, object, descriptor = hs.osascript.applescript('display dialog "Hello World"')
+        local as = 'tell application "Finder" to eject (every disk whose ejectable is true)'
+        local result, object, descriptor = hs.osascript.applescript(as)
+        if result then
+            log.i(object, descriptor)
+            hs.alert.show("volumes umounted")
+        else
+            hs.alert.show("failed unmounting volumes")
+        end
+    end
+)
 
 local msgReload = "hammerspoon loaded on " .. hostName
 hs.alert.show(msgReload)
