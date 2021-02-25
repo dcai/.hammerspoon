@@ -85,20 +85,27 @@ bindGlobalKey("t", showDateAndTime)
 bindGlobalKey(
     "u",
     function()
-        -- local result, object, descriptor = hs.osascript.applescript('display dialog "Hello World"')
-        local uuid = showAllVolumes()
-        local as = 'tell application "Finder" to eject (every disk whose ejectable is true)'
-        local result, object, descriptor = hs.osascript.applescript(as)
-        if result then
-            hs.alert.closeSpecific(uuid)
-            log.i(object, descriptor)
-            hs.alert.show("volumes umounted")
-        else
-            hs.alert.show("failed unmounting volumes")
+        local yes = "Yes"
+        local no = "No"
+        local buttonClicked = hs.dialog.blockAlert("Umount", "Are you sure to unmount all?", "Yes", "No", "critical")
+
+        if buttonClicked == yes then
+            local uuid = showAllVolumes()
+            log.i(uuid)
+            local as = 'tell application "Finder" to eject (this every disk whose ejectable is true)'
+            local result, object, descriptor = hs.osascript.applescript(as)
+            if result then
+                hs.alert.closeSpecific(uuid)
+                log.i(object, descriptor)
+                hs.alert.show("volumes umounted")
+            else
+                hs.alert.show("failed unmounting volumes")
+            end
         end
     end
 )
 
 local msgReload = "hammerspoon loaded on " .. hostName
+-- this causes LuaSkin error in console
 hs.alert.show(msgReload)
 -- hs.notify.show("Hammerspoon", hostName, msgReload)
