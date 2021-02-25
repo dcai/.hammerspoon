@@ -57,11 +57,11 @@ local hammerspoonHome = os.getenv("HOME") .. "/.hammerspoon/"
 configWatcher = hs.pathwatcher.new(hammerspoonHome, reloadConfig):start()
 
 require "app"
-require "caffeine"
 require "anycomplete"
 require "grid"
 require "layout"
 require "window"
+-- require "caffeine"
 -- require "battery"
 
 bindGlobalKey("r", reloadConfig)
