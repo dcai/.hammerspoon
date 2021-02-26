@@ -61,49 +61,13 @@ require "anycomplete"
 require "grid"
 require "layout"
 require "window"
+require "spoons"
 -- require "caffeine"
 -- require "battery"
 
-function showAllVolumes()
-    local vols = hs.fs.volume.allVolumes()
-    local msg = "volumes: \n"
-    for key, vol in pairs(vols) do
-        msg = msg .. key .. "\n"
-    end
-    return hs.alert(
-        msg,
-        {
-            ["textSize"] = 12
-        },
-        hs.screen.mainScreen(),
-        12
-    )
-end
-
 bindGlobalKey("r", reloadConfig)
 bindGlobalKey("t", showDateAndTime)
-bindGlobalKey(
-    "u",
-    function()
-        local yes = "Yes"
-        local no = "No"
-        local buttonClicked = hs.dialog.blockAlert("Umount", "Are you sure to unmount all?", "Yes", "No", "critical")
-
-        if buttonClicked == yes then
-            local uuid = showAllVolumes()
-            log.i(uuid)
-            -- local as = 'display dialog "Hello World"'
-            local as = 'tell application "Finder" to eject (every disk whose ejectable is true)'
-            local result, object, descriptor = hs.osascript.applescript(as)
-            if result then
-                hs.alert.closeSpecific(uuid)
-                hs.alert.show("volumes umounted")
-            else
-                hs.alert.show("failed unmounting volumes")
-            end
-        end
-    end
-)
+-- bindGlobalKey("u", askUnmount)
 
 local msgReload = "hammerspoon loaded on " .. hostName
 -- this causes LuaSkin error in console
