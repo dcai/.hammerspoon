@@ -45,7 +45,7 @@ layouts["giant-cat"] = {
         {appEditor, nil, screenLcd, positions.left70, nil, nil},
         {appTerminal, nil, screenMain, positions.centered80, nil, nil},
         {appBrowser, nil, screenMain, positions.centered80, nil, nil},
-        {appSlack, nil, screenMain, positions.chat, nil, nil},
+        {appSlack, nil, screenLcd, positions.right70, nil, nil},
         {appDiscord, nil, screenMain, positions.chat, nil, nil}
     }
 }
