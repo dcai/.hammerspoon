@@ -2,11 +2,10 @@
 -- Layouts
 --
 local screenAsusVs247 = "ASUS VS239"
-local screenM1 = "Built-in Retina Display"
 local screenWork = "VE248"
 local screenX1 = "X1"
 local screenMain = hs.screen.mainScreen()
-local screenLcd = "Color LCD"
+local screenLcd = "Built-in Retina Display"
 local screenSecondary = {
     ["jumpy-panda"] = screenLcd,
     ["default"] = screenLcd
