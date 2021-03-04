@@ -2,6 +2,7 @@
 -- Layouts
 --
 local screenAsusVs247 = "ASUS VS239"
+local screenM1 = "Built-in Retina Display"
 local screenWork = "VE248"
 local screenX1 = "X1"
 local screenMain = hs.screen.mainScreen()
@@ -111,7 +112,7 @@ end
 
 function applyDefaultLayout()
     for _, screen in pairs(hs.screen.allScreens()) do
-        log.i("screen info => ", _, " => ", screen, screen:name())
+        log.i("screen info => ", _, " => ", screen:name())
     end
     log.i("Apply default layout for " .. hostName)
     local layout = layouts["default"].definition
