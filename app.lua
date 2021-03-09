@@ -14,9 +14,11 @@ function bindAppKey(modifier, app)
             local defaultScreenName = "un-named screen"
             local prevScreenName = defaultScreenName
             local prevFocusedWin = hs.window.focusedWindow()
-            local prevScreen = prevFocusedWin:screen()
-            if prevFocusedWin and prevScreen then
-                prevScreenName = prevScreen:name() or defaultScreenName
+            if prevFocusedWin then
+                local prevScreen = prevFocusedWin:screen()
+                if prevScreen then
+                    prevScreenName = prevScreen:name() or defaultScreenName
+                end
             end
 
             local launched = hs.application.launchOrFocus(app)
