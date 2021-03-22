@@ -6,7 +6,7 @@ Install:andUse(
         config = {
             eject_on_sleep = true,
             eject_on_lid_close = true,
-            show_in_menubar = true,
+            show_in_menubar = false,
             notify = true
         },
         hotkeys = {ejectAll = {keyGlobal, "u"}},
