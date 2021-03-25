@@ -91,7 +91,7 @@ appFinderWatcher =
     hs.application.watcher.new(
     function(appName, eventType, appObject)
         if (eventType == hs.application.watcher.activated) then
-            if (appName == "Finder" or appName == "Slack") then
+            if (appName == "Finder" or appName == "Slack" or appName == "Sublime Text") then
                 -- Bring all Finder windows forward when one gets activated
                 appObject:selectMenuItem({"Window", "Bring All to Front"})
             end

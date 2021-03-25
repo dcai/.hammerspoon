@@ -17,6 +17,7 @@ local appTerminal = hs.appfinder.appFromName("iTerm2")
 local appTrade = "富途牛牛"
 local appSlack = "Slack"
 local appDiscord = "Discord"
+local appCalendar = "appCalendar"
 
 layouts = {}
 layouts["default"] = {
@@ -40,13 +41,14 @@ layouts["jumpy-panda"] = {
 
 layouts["giant-cat"] = {
     name = "giant-cat",
-    description = "macbook pro 16 woolworths",
+    description = "macbook pro 16",
     definition = {
-        {appEditor, nil, screenLcd, positions.left70, nil, nil},
-        {appTerminal, nil, screenMain, positions.centered80, nil, nil},
-        {appBrowser, nil, screenMain, positions.centered80, nil, nil},
-        {appSlack, nil, screenLcd, positions.right70, nil, nil},
-        {appDiscord, nil, screenMain, positions.chat, nil, nil}
+        {appEditor, nil, screenX1, positions.left70, nil, nil},
+        {appTerminal, nil, screenX1, positions.centered80, nil, nil},
+        {appBrowser, nil, screenX1, positions.centered80, nil, nil},
+        {appSlack, nil, screenLcd, positions.centered, nil, nil},
+        {appDiscord, nil, screenX1, positions.chat, nil, nil},
+        {appCalendar, nil, screenLcd, positions.centered80, nil, nil}
     }
 }
 
