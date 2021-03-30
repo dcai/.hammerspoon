@@ -72,7 +72,8 @@ local key2app = {
     d = "Discord",
     s = "Slack",
     w = "WeChat",
-    f = "Firefox"
+    f = "Firefox",
+    t = "Telegram Lite",
 }
 
 for key, app in pairs(key2app) do
