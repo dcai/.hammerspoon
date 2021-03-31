@@ -69,11 +69,12 @@ local key2app = {
     ["."] = "Dictionary",
     ["\\"] = "Dictionary",
     ["return"] = "Postman",
-    d = "Discord",
+    c = "Calendar",
+    -- d = "Discord",
     s = "Slack",
     w = "WeChat",
     f = "Firefox",
-    t = "Telegram Lite",
+    t = "Telegram",
 }
 
 for key, app in pairs(key2app) do
